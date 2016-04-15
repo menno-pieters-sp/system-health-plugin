@@ -1,3 +1,3 @@
-select "About to drop table 'new_table'";
+select "About to drop table 'system_health_table'";
 
-drop table if exists new_table;
+drop table if exists system_health_table;
