@@ -1,5 +1,0 @@
-select 1;
-
-CREATE  TABLE `system_health_table` (
-  `system_id` VARCHAR(255) NOT NULL ,
-  PRIMARY KEY (`system_id`) );

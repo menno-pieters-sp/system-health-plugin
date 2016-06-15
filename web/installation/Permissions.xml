@@ -1,30 +1,30 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE sailpoint PUBLIC "sailpoint.dtd" "sailpoint.dtd">
 <sailpoint>
-    <SPRight displayName="HelloWorldPluginRestServiceAllow" name="HelloWorldPluginRestServiceAllow">
-        <Description>Allow access to Hello World Plugin REST Service</Description>
+    <SPRight displayName="SystemHealthPluginRestServiceAllow" name="SystemHealthPluginRestServiceAllow">
+        <Description>Allow access to System Health Plugin REST Service</Description>
     </SPRight>
 
-    <Capability displayName="HelloWorldPluginRestServiceAccess" name="HelloWorldPluginRestServiceAccess">
-        <Description>Allow access to Hello World Plugin REST Service</Description>
+    <Capability displayName="SystemHealthPluginRestServiceAccess" name="SystemHealthPluginRestServiceAccess">
+        <Description>Allow access to System Health Plugin REST Service</Description>
         <RightRefs>
-            <Reference class="sailpoint.object.SPRight" name="HelloWorldPluginRestServiceAllow"/>
+            <Reference class="sailpoint.object.SPRight" name="SystemHealthPluginRestServiceAllow"/>
         </RightRefs>
     </Capability>
 
-    <SPRight displayName="HelloWorldPluginRight" name="HelloWorldPluginRight">
-        <Description>Access to use the Hello World Plugin</Description>
+    <SPRight displayName="SystemHealthPluginRight" name="SystemHealthPluginRight">
+        <Description>Access to use the System Health Plugin</Description>
     </SPRight>
 
-    <SPRight displayName="HelloWorldPluginIconRight" name="HelloWorldPluginIconRight">
-        <Description>Access to see (load) the Hello World Plugin header inject snippet</Description>
+    <SPRight displayName="SystemHealthPluginIconRight" name="SystemHealthPluginIconRight">
+        <Description>Access to see (load) the System Health Plugin header inject snippet</Description>
     </SPRight>
 
-    <Capability displayName="HelloWorldPluginCapability" name="HelloWorldPluginCapability">
+    <Capability displayName="SystemHealthPluginCapability" name="SystemHealthPluginCapability">
         <Description>Allow access to Hello World Plugin</Description>
         <RightRefs>
-            <Reference class="sailpoint.object.SPRight" name="HelloWorldPluginRight"/>
-            <Reference class="sailpoint.object.SPRight" name="HelloWorldPluginIconRight"/>
+            <Reference class="sailpoint.object.SPRight" name="SystemHealthPluginRight"/>
+            <Reference class="sailpoint.object.SPRight" name="SystemHealthPluginIconRight"/>
         </RightRefs>
     </Capability>
 
