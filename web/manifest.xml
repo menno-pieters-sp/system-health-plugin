@@ -11,14 +11,14 @@
                                 <entry key="SystemHealthPlugin">
                                     <value>
                                         <Plugin uniqueName="systemhealthplugin" displayName="System Health" enabled="true"
-                                                version="0.0.0.21" allowDisable="true" visible="true" allowUninstall="true"
+                                                version="0.0.0.27" allowDisable="true" visible="true" allowUninstall="true"
                                                 minFrameworkVersion="0.4.5" maxFrameworkVersion="1.0.0"
                                                 minUpgradableVersion="0.0.0.1" certificationLevel="BASIC"
-                                                pluginAccessRight="SystemAdministrator">
+                                                pluginAccessRight="SystemHealthPluginRight">
 
                                             <PluginConfiguration>
                                                 <Snippets>
-                                                    <Snippet pagesMatchRegExPattern=".*" isMobile="true" isDesktop="true" rightRequired="SystemAdministrator" >
+                                                    <Snippet pagesMatchRegExPattern=".*" isMobile="true" isDesktop="true" rightRequired="SystemHealthPluginIconRight" >
                                                         <ScriptIncludes>
                                                             <String>{plugin_root}/ui/js/headerInject.js</String>
                                                         </ScriptIncludes>

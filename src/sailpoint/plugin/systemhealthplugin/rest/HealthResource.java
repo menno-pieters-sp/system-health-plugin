@@ -25,7 +25,7 @@ import sailpoint.web.plugin.config.Plugin;
  */
 
 
-@SPRightsRequired(value={"SystemHealthPluginAccess"})
+@SPRightsRequired(value={"SystemHealthPluginRestServiceAllow"})
 @Path("systemhealthplugin")
 public class HealthResource extends AbstractPluginRestResource {
 	
@@ -87,7 +87,7 @@ public class HealthResource extends AbstractPluginRestResource {
     /**
      * Returns the system health status
      */
-    @SPRightsRequired(value={"SystemHealthPluginAccess"})
+    @SPRightsRequired(value={"SystemHealthPluginRestServiceAllow"})
     @GET
     @Path("getStatus")
     @Produces(MediaType.APPLICATION_JSON)
