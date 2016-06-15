@@ -1,0 +1,18 @@
+.healthOK {
+    color: white;
+}
+
+.healthWARN {
+	color: orange;
+}
+
+.healthERROR {
+	color: red;
+}
+
+.healthUNKNOWN {
+	color: grey;
+}
+
+
+

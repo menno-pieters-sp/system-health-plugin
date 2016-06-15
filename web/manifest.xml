@@ -10,33 +10,24 @@
                             <Map>
                                 <entry key="SystemHealthPlugin">
                                     <value>
-                                        <Plugin uniqueName="SystemHealthPlugin" displayName="System Health" enabled="true"
-                                                version="0.1.3" allowDisable="true" visible="true" allowUninstall="true"
-                                                minFrameworkVersion="0.1.0" maxFrameworkVersion="1.0.0"
-                                                minUpgradableVersion="0.1.3" certificationLevel="BASIC"
-                                                pluginAccessRight="HelloWorldPluginRight">
+                                        <Plugin uniqueName="systemhealthplugin" displayName="System Health" enabled="true"
+                                                version="0.0.0.21" allowDisable="true" visible="true" allowUninstall="true"
+                                                minFrameworkVersion="0.4.5" maxFrameworkVersion="1.0.0"
+                                                minUpgradableVersion="0.0.0.1" certificationLevel="BASIC"
+                                                pluginAccessRight="SystemAdministrator">
 
-                                            <PluginConfiguration
-                                                    settingsPageTemplateURL="ui/htmlTemplates/pluginSettings.html">
-                                                <FullPage desktopIncludePath="{plugin_root}/ui/hello.xhtml"
-                                                          mobileIncludePath="{plugin_root}/ui/hello.xhtml"/>
+                                            <PluginConfiguration>
                                                 <Snippets>
-                                                    <Snippet pagesMatchRegExPattern=".*" isMobile="true"
-                                                             isDesktop="true" rightRequired="HelloWorldPluginIconRight" >
+                                                    <Snippet pagesMatchRegExPattern=".*" isMobile="true" isDesktop="true" rightRequired="SystemAdministrator" >
                                                         <ScriptIncludes>
                                                             <String>{plugin_root}/ui/js/headerInject.js</String>
                                                         </ScriptIncludes>
                                                         <StylesheetIncludes>
-                                                            <String>{plugin_root}/ui/css/helloWorld.css</String>
+                                                            <String>{plugin_root}/ui/css/systemHealth.css</String>
                                                         </StylesheetIncludes>
                                                     </Snippet>
                                                 </Snippets>
                                             </PluginConfiguration>
-                                            <ConfigurableSettings>
-                                                <Map>
-                                                    <entry key="Message" value="Hello World"/>
-                                                </Map>
-                                            </ConfigurableSettings>
                                         </Plugin>
                                     </value>
                                 </entry>
