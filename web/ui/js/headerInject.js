@@ -23,7 +23,7 @@ jQuery(document).ready(function(){
 		.before(
 				'<li class="dropdown">' +
 				'		<a href="' + hostsUrl + '" tabindex="0" role="menuitem" data-snippet-debug="off">' +
-				'			<i id="systemHealthStatusIcon" role="presenation" class="fa fa-heart fa-lg ' + statusClass + '"></i>' +
+				'			<i id="systemHealthStatusIcon" role="presenation" class="fa fa-heartbeat fa-lg ' + statusClass + '"></i>' +
 				'		</a>' +
 				'</li>'
 		);
