@@ -38,7 +38,7 @@ jQuery(document).ready(function(){
     .done(function (msg) {
         healthstatus = msg._status;
         statusClass = 'health' + healthstatus;
-	    document.getElementById("systemHealthStatusIcon").className = 'fa fa-heart fa-lg ' + statusClass;
+	    document.getElementById("systemHealthStatusIcon").className = 'fa fa-heartbeat fa-lg ' + statusClass;
     });
 
 	setInterval(function(){
@@ -52,7 +52,7 @@ jQuery(document).ready(function(){
 	    .done(function (msg) {
 	        healthstatus = msg._status;
 	        statusClass = 'health' + healthstatus;
-		    document.getElementById("systemHealthStatusIcon").className = 'fa fa-heart fa-lg ' + statusClass;
+		    document.getElementById("systemHealthStatusIcon").className = 'fa fa-heartbeat fa-lg ' + statusClass;
 	    });
 	
 	
