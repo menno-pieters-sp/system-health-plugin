@@ -1,21 +1,8 @@
-//<script src="ui/js/jquery.min.js"></script>
-
-/*
-
-Other available values to build paths, etc. that are obtained from the server and set in the PluginFramework JS object
-
-PluginFramework.PluginBaseEndpointName = '#{pluginFramework.basePluginEndpointName}';
-PluginFramework.PluginEndpointRoot = '#{pluginFramework.basePluginEndpointName}/#{pluginFramework.basePluginEndpointName}';
-PluginFramework.PluginFolderName = '#{pluginFramework.pluginFolderName}';
-PluginFramework.CurrentPluginUniqueName = '#{pluginFramework.uniqueName}';
-PluginFramework.CsrfToken = Ext.util.Cookies.get('CSRF-TOKEN');
-
- */
-
 
 var hostsUrl = SailPoint.CONTEXT_PATH + '/systemSetup/hostConfig.jsf?forceLoad=true';
 var jQueryClone = jQuery;
 var statusClass = 'healthUNKNOWN';
+var CsrfToken = Ext.util.Cookies.get('CSRF-TOKEN');
 
 jQuery(document).ready(function(){
 
@@ -31,9 +18,9 @@ jQuery(document).ready(function(){
     jQueryClone.ajax({
         method: "GET",
         beforeSend: function (request) {
-            request.setRequestHeader("X-XSRF-TOKEN", PluginFramework.CsrfToken);
+            request.setRequestHeader("X-XSRF-TOKEN", CsrfToken);
         },
-        url: SailPoint.CONTEXT_PATH + "/plugin/systemhealthplugin/getStatus"
+        url: SailPoint.CONTEXT_PATH + "/plugin/rest/systemhealthplugin/getStatus"
     })
     .done(function (msg) {
         healthstatus = msg._status;
@@ -45,9 +32,9 @@ jQuery(document).ready(function(){
 	    jQueryClone.ajax({
 	        method: "GET",
 	        beforeSend: function (request) {
-	            request.setRequestHeader("X-XSRF-TOKEN", PluginFramework.CsrfToken);
+	            request.setRequestHeader("X-XSRF-TOKEN", CsrfToken);
 	        },
-	        url: SailPoint.CONTEXT_PATH + "/plugin/systemhealthplugin/getStatus"
+	        url: SailPoint.CONTEXT_PATH + "/plugin/rest/systemhealthplugin/getStatus"
 	    })
 	    .done(function (msg) {
 	        healthstatus = msg._status;

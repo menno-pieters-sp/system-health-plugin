@@ -1,8 +1,11 @@
 package sailpoint.plugin.systemhealthplugin.rest;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
-import javax.ws.rs.*;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import org.apache.commons.logging.Log;
@@ -11,13 +14,10 @@ import org.apache.commons.logging.LogFactory;
 import sailpoint.api.SailPointContext;
 import sailpoint.object.Attributes;
 import sailpoint.object.Server;
-import sailpoint.rest.BaseResource;
-import sailpoint.tools.GeneralException;
-import sailpoint.plugin.rest.AbstractPluginRestResource;
-import sailpoint.plugin.rest.jaxrs.SPRightsRequired;
 import sailpoint.plugin.systemhealthplugin.SystemHealthDTO;
-//import sailpoint.plugin.rest.jaxrs.AllowAll;
-import sailpoint.web.plugin.config.Plugin;
+import sailpoint.rest.plugin.BasePluginResource;
+import sailpoint.rest.plugin.RequiredRight;
+import sailpoint.tools.GeneralException;
 
 
 /**
@@ -25,9 +25,9 @@ import sailpoint.web.plugin.config.Plugin;
  */
 
 
-@SPRightsRequired(value={"SystemHealthPluginRestServiceAllow"})
+@RequiredRight("SystemHealthPluginRestServiceAllow")
 @Path("systemhealthplugin")
-public class HealthResource extends AbstractPluginRestResource {
+public class HealthResource extends BasePluginResource {
 	
 	private static Log log = LogFactory.getLog(HealthResource.class);
 	
@@ -87,7 +87,7 @@ public class HealthResource extends AbstractPluginRestResource {
     /**
      * Returns the system health status
      */
-    @SPRightsRequired(value={"SystemHealthPluginRestServiceAllow"})
+    @RequiredRight("SystemHealthPluginRestServiceAllow")
     @GET
     @Path("getStatus")
     @Produces(MediaType.APPLICATION_JSON)
@@ -99,4 +99,9 @@ public class HealthResource extends AbstractPluginRestResource {
         healthDTO.set_status(getOverallSystemStatus());
         return healthDTO;
     }
+
+	@Override
+	public String getPluginName() {
+		return "systemhealthplugin";
+	}
 }

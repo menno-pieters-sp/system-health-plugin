@@ -1,41 +1,31 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<!DOCTYPE sailpoint PUBLIC "sailpoint.dtd" "sailpoint.dtd">
-<sailpoint>
-    <ImportAction name="merge">
-        <Configuration name="PluginFrameworkConfig">
-            <Attributes>
-                <Map>
-                    <entry key="Plugins">
-                        <value>
-                            <Map>
-                                <entry key="SystemHealthPlugin">
-                                    <value>
-                                        <Plugin uniqueName="systemhealthplugin" displayName="System Health" enabled="true"
-                                                version="0.0.0.33" allowDisable="true" visible="true" allowUninstall="true"
-                                                minFrameworkVersion="0.5.3" maxFrameworkVersion="1.0.0"
-                                                minUpgradableVersion="0.0.0.1" certificationLevel="BASIC"
-                                                pluginAccessRight="SystemHealthPluginRight">
-
-                                            <PluginConfiguration>
-                                                <Snippets>
-                                                    <Snippet pagesMatchRegExPattern=".*" isMobile="true" isDesktop="true" rightRequired="SystemHealthPluginIconRight" >
-                                                        <ScriptIncludes>
-                                                            <String>{plugin_root}/ui/js/headerInject.js</String>
-                                                        </ScriptIncludes>
-                                                        <StylesheetIncludes>
-                                                            <String>{plugin_root}/ui/css/systemHealth.css</String>
-                                                        </StylesheetIncludes>
-                                                    </Snippet>
-                                                </Snippets>
-                                            </PluginConfiguration>
-                                        </Plugin>
-                                    </value>
-                                </entry>
-                            </Map>
-                        </value>
-                    </entry>
-                </Map>
-            </Attributes>
-        </Configuration>
-    </ImportAction>
-</sailpoint>
+<?xml version="1.0"?>
+<!DOCTYPE Plugin PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Plugin name="systemhealthplugin" displayName="System Health" version="0.0.1.1" disabled="false" certificationLevel="None" rightRequired="SystemHealthPluginRight" minSystemVersion="7.1"
+	maxSystemVersion="7.2">
+	<Attributes>
+		<Map>
+			<entry key="snippets">
+				<value>
+					<List>
+						<Snippet regexPattern=".*" rightRequired="SystemHealthPluginIconRight">
+							<Scripts>
+								<String>ui/js/headerInject.js</String>
+							</Scripts>
+							<StyleSheets>
+								<String>ui/css/systemHealth.css</String>
+							</StyleSheets>
+						</Snippet>
+					</List>
+				</value>
+			</entry>
+			<entry key="minUpgradableVersion" value="0.0.1.0" />
+			<entry key="restResources">
+				<value>
+					<List>
+						<String>sailpoint.plugin.systemhealthplugin.rest.HealthResource</String>
+					</List>
+				</value>
+			</entry>
+		</Map>
+	</Attributes>
+</Plugin>
