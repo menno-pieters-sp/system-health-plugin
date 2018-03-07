@@ -19,12 +19,6 @@ import sailpoint.rest.plugin.BasePluginResource;
 import sailpoint.rest.plugin.RequiredRight;
 import sailpoint.tools.GeneralException;
 
-
-/**
- * @author nick.wellinghoff
- */
-
-
 @RequiredRight("SystemHealthPluginRestServiceAllow")
 @Path("systemhealthplugin")
 public class HealthResource extends BasePluginResource {
@@ -76,7 +70,7 @@ public class HealthResource extends BasePluginResource {
 				}
 				Attributes<String, Object> attributes = host.getAttributes();
 				if (attributes.getFloat("cpuUsage") > 80.0) {
-					log.warn("CPU load greater than 80%");
+					log.warn("CPU load greater than 80 percent");
 					status = "WARN";
 				}
 			}
