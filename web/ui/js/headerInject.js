@@ -1,5 +1,5 @@
 
-var hostsUrl = SailPoint.CONTEXT_PATH + '/systemSetup/hostConfig.jsf?forceLoad=true';
+var hostsUrl = SailPoint.CONTEXT_PATH + '/adminConsole/index.jsf#/environmentMonitoring/hosts';
 var jQueryClone = jQuery;
 var statusClass = 'healthUNKNOWN';
 var CsrfToken = Ext.util.Cookies.get('CSRF-TOKEN');

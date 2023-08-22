@@ -63,14 +63,21 @@ public class HealthResource extends BasePluginResource {
 		} else {
 			status = "OK";
 			for (Server host: hosts) {
+				String name = host.getName();
+				if (name != null && name.toLowerCase().endsWith("-console")) {
+					if (log.isDebugEnabled()) {
+						log.debug(String.format("Host '%s' ignored - console"));
+					}
+					continue;
+				}
 				if (host.isInactive()) {
-					log.error("Inactive host");
+					log.error(String.format("Inactive host: %s", name));
 					status = "ERROR";
 					break;
 				}
 				Attributes<String, Object> attributes = host.getAttributes();
 				if (attributes.getFloat("cpuUsage") > 80.0) {
-					log.warn("CPU load greater than 80 percent");
+					log.warn(String.format("Host '%': CPU load greater than 80 percent", name));
 					status = "WARN";
 				}
 			}
